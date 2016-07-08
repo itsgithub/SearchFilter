@@ -8,6 +8,8 @@
     <link href="styles.css" rel="stylesheet" />
 </head>
 <body ng-controller="myController">
+    Search: <input type="text" placeholder="Search months" ng-model="searchText"/>
+    <br/><br/>
     <table>
         <thead>
             <tr>
@@ -18,7 +20,7 @@
             </tr>
         </thead>
         <tbody>
-            <tr ng-repeat="month in months">
+            <tr ng-repeat="month in months | filter:searchText">
                 <td>{{month.name}}</td>
                 <td>{{month.visits}}</td>
                 <td>{{month.order}}</td>
